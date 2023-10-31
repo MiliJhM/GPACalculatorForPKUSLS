@@ -14,7 +14,7 @@ def generate(data:pd.DataFrame)-> pd.DataFrame:
     """
 
     data = data[(data.成绩 != '缓考')&(data.成绩!='IP')&(data.成绩!='W')]
-    data.drop_duplicates(subset=['学号','课程号'],keep='last',inplace=True)
+    data.drop_duplicates(subset=['学号', '课程号'],keep='last',inplace=True)
     data['成绩']=data['成绩'].apply(pd.to_numeric,errors='ignore')
     data['课程号'] = data['课程号'].astype(str)
     data['学号']=data['学号'].astype(str)

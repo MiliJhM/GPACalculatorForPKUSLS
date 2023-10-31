@@ -16,6 +16,7 @@ if __name__ == "__main__":
             input = pd.read_excel(file_path)
             try:
                 input = prase(input)
+                print(input)
             except:
                 print("Cannot prase the file, check the file format.")
                 continue
@@ -33,9 +34,12 @@ if __name__ == "__main__":
     tkinter.Label(root, text="优秀率").grid(row=0, column=1)
     tkinter.Label(root, text="优良率").grid(row=0, column=2)
     tkinter.Label(root, text="及格率").grid(row=0, column=3)
+    print(result)
     for i in range(len(result)):
         tkinter.Label(root, text=result.iloc[i, 3]).grid(row=i + 1, column=0)
         tkinter.Label(root, text=result.iloc[i, 0]).grid(row=i + 1, column=1)
         tkinter.Label(root, text=result.iloc[i, 1]).grid(row=i + 1, column=2)
         tkinter.Label(root, text=result.iloc[i, 2]).grid(row=i + 1, column=3)
+
+    
     root.mainloop()
